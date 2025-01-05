@@ -105,7 +105,7 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat im
     private void chanceStates(String key) {
         
         var update_check = mPrefs.getBoolean("update_check", true);
-        setPreferenceState("update_check", update_check);
+        mPrefs.edit().putBoolean("update_check", update_check).apply();
 
         var lite_mode = mPrefs.getBoolean("lite_mode", false);
 
